@@ -15,17 +15,17 @@
 
 ### コーディング
 
-- [コーディング規約](https://github.com/officenavi/officenavi-documents/tree/master/program/コーディング規約/laravel)
+- [コーディング規約](https://github.com/officenavi/officenavi-documents/blob/master/system-docs/general/policies/laravel/coding-rules.md)
 
 ### 機密情報管理
 
-- [パスワード管理ツール](https://github.com/officenavi/officenavi-documents/tree/master/program/パスワード管理ツール)
+- [パスワード管理ツール](https://github.com/officenavi/officenavi-documents/blob/master/system-docs/general/manuals/%E3%83%91%E3%82%B9%E3%83%AF%E3%83%BC%E3%83%89%E7%AE%A1%E7%90%86%E3%83%84%E3%83%BC%E3%83%AB/readme.md)
 
 ### 課題対応
 
-- [課題運用ガイドライン](https://auraoffice.backlog.com/alias/wiki/3523217)
-- [www Git運用](https://github.com/officenavi/officenavi-documents/blob/master/www/Application-Documents/Git運用.md)
-- [oni Git運用](https://github.com/officenavi/officenavi-documents/blob/master/oni/Application-Documents/Git運用.md)
+- [課題運用ガイドライン](https://officenavi.backlog.com/alias/wiki/4937015)
+- [www Git運用](https://github.com/officenavi/officenavi-documents/blob/master/system-docs/general/www/Git%E9%81%8B%E7%94%A8.md)
+- [oni Git運用](https://github.com/officenavi/officenavi-documents/blob/master/system-docs/general/oni/Git%E9%81%8B%E7%94%A8.md)
 
 ### 対応する課題の管理
 
