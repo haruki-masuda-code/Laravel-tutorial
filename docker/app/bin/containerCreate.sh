@@ -7,7 +7,7 @@ fi
 
 # 開発で使用するPHPやNodeのパッケージのインストール
 composer install
-npm install
+npm ci
 
 # laravel を動作させるためのコマンドの実行
 php artisan key:generate
