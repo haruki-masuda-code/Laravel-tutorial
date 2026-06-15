@@ -9,8 +9,9 @@ class HelloController extends Controller
 {
     public function index(){
         $first = Office::find(1);
+
         return view('hello',[
-            'first_blade' => $first,
+            'first' => $first,
 
         ]);
     }
