@@ -3,15 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Office;
 
 class HelloController extends Controller
 {
     public function index(){
-        $test = "テスト";
-        $integer = "5";
+        $first = Office::find(1);
         return view('hello',[
-            'test_blade' => $test,
-            'integer_blade' => $integer,
+            'first_blade' => $first,
+
         ]);
     }
 }

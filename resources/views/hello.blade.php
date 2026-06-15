@@ -1,3 +1,1 @@
-Hello World!!
-{{ $test_blade }}
-{{ $integer_blade }}
+{{ $first_blade }}
