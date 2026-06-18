@@ -13,12 +13,12 @@
       <fieldset>
         <div class="form-group">
           <label for="name">施設名<span class="badge badge-danger ml-2">必須</span></label>
-          <input type="text" class="form-control" name="name" id="name" maxlength="50" required>
+          <input type="text" class="form-control" name="name" id="name" maxlength="50">
         </div>
 
         <div class="form-group">
           <label for="address">ビル名<span class="badge badge-danger ml-2">必須</span></label>
-          <input type="text" class="form-control" name="address" id="address" required>
+          <input type="text" class="form-control" name="address" id="address">
         </div>
 
         <div class="form-group">
@@ -28,7 +28,7 @@
 
         <div class="form-group">
           <label for="stair">募集階<span class="badge badge-danger ml-2">必須</span></label>
-          <input type="number" class="form-control" name="stair" id="stair" required>
+          <input type="number" class="form-control" name="stair" id="stair">
         </div>
 
         <div class="form-group">
