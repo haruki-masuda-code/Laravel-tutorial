@@ -8,4 +8,18 @@ use Illuminate\Database\Eloquent\Model;
 class Office extends Model
 {
     use HasFactory;
+
+    protected $table = 'offices';
+
+    protected $primaryKey = 'office_id';
+
+    protected $fillable = [
+    'name',
+    'address',
+    'post_code',
+    'stair',
+    'comment'
+    ];
+
+
 }

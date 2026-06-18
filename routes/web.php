@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HelloController;
+use App\Http\Controllers\OfficeController;      
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,6 +15,11 @@ use App\Http\Controllers\HelloController;
 */
 
 Route::get('/hello',[HelloController::class,'index']);
+
+
+
+Route::get('/offices/create', [OfficeController::class, 'create'])->name('office.create');
+Route::post('/offices', [OfficeController::class, 'store'])->name('office.store');
 
 Route::get('/', function () {
     return view('welcome');

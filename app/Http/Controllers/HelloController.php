@@ -12,7 +12,6 @@ class HelloController extends Controller
 
         return view('hello',[
             'first' => $first,
-
         ]);
     }
 }
