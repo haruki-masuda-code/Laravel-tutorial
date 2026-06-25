@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Office;
+use App\Http\Requests\OfficeRequest;
+
 
 class OfficeController extends Controller
 {
@@ -14,7 +16,7 @@ class OfficeController extends Controller
     public function create(){
         return view('create');
     }
-    public function store(Request $request){
+    public function store(OfficeRequest $request){
     $this->office->create([
       'name' => $request->name,
       'address' => $request->address,
