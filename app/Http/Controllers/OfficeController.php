@@ -16,6 +16,11 @@ class OfficeController extends Controller
     public function create(){
         return view('create');
     }
+    public function index(){
+        $data = $this->office->getData();
+        return view('show',compact('data'));
+    }
+
     public function store(OfficeRequest $request){
     $registerOffice = $this->office->create([
       'name' => $request->name,
