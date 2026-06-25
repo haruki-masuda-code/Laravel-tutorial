@@ -3,12 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <title>情報登録</title>
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 <body>
   <div class="container small">
     <h1>情報を登録</h1>
     
-    <form action="{{ route('office.store') }}" method="POST">
+    <form id="officeForm" action="{{ route('office.store') }}" method="POST">
       @csrf
       <fieldset>
         <div class="form-group">
@@ -67,5 +70,27 @@
       </button>
     </form>
   </div>
+
+  <script>
+    $.ajaxSetup({
+        headers: { 'X-CSRF-TOKEN': $("[name='csrf-token']").attr("content") },
+    })
+
+    $('.btn-success').on('click',function(e){
+        e.preventDefault();
+        let formData = $('#officeForm').serialize();
+        $.ajax({
+            url: "{{ route('office.store') }}",
+            method: "POST",
+            data: formData,
+            dataType: "json"
+        }).done(function(res){
+            console.log(res);
+            alert('登録しました');
+        }).fail(function(){
+            alert('エラーが発生しました');
+        })
+    });
+  </script>
 </body>
 </html>

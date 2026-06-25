@@ -17,13 +17,16 @@ class OfficeController extends Controller
         return view('create');
     }
     public function store(OfficeRequest $request){
-    $this->office->create([
+    $registerOffice = $this->office->create([
       'name' => $request->name,
       'address' => $request->address,
       'post_code' => $request->post_code,
       'stair' => $request->stair,
       'comment' => $request->comment,
     ]);
+    if($request->ajax()){
+        return response()->json($registerOffice);
+    }
     return redirect()->route('office.create');
 
     }
