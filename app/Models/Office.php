@@ -24,9 +24,13 @@ class Office extends Model
     'del_flg',
     ];
 
+    public function memos()
+    {
+        return $this->hasMany(Memo::class);
+    }
+
     public function getData(){
-        $data = DB::table($this->table)->get();
-        return $data;
+        return self::with('memos')->get();
     }
 
 

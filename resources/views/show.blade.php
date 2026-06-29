@@ -20,6 +20,8 @@
           <th>募集階</th>
           <th>コメント</th>
           <th>操作</th>
+          <th>メモ</th>
+
         </tr>
       </thead>
       <tbody>
@@ -38,6 +40,11 @@
                 @method('DELETE')
             <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('本当に削除しますか？')">削除</button>
             </form>
+          </td>
+          <td>
+            @foreach ($office->memos as $memo)
+                <li>{{ $memo->text }}</li>
+            @endforeach
           </td>
         </tr>
         @endforeach

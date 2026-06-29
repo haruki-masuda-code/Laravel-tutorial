@@ -11,9 +11,7 @@ use Illuminate\Support\Facades\DB;
 class OfficeController extends Controller
 {
     protected $office;
-    public function __construct(){
-        $this->office = new Office();
-    }
+    
     public function edit($office_id){
         $office = Office::findOrFail($office_id);
         return view("create", compact("office"));
@@ -29,7 +27,8 @@ class OfficeController extends Controller
         return view('create');
     }
     public function index(){
-        $data = Office::all();
+        $officeModel = new Office();
+        $data = $officeModel->getData(); 
         return view('show',compact('data'));
     }
 
