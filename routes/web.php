@@ -23,6 +23,7 @@ Route::post('/offices', [OfficeController::class, 'store'])->name('office.store'
 Route::get('/offices/{office_id}/edit', [OfficeController::class,'edit'])->name('office.edit');
 Route::post('/offices/{office_id}/update', [OfficeController::class, 'update'])->name('office.update');
 Route::get('/offices', [OfficeController::class,'index'])->name('office.index');
+Route::delete('/offices/{office_id}', [OfficeController::class, 'delete'])->name('office.delete');
 Route::get('/', function () {
     return view('welcome');
 });

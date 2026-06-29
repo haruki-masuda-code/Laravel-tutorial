@@ -15,19 +15,26 @@ class OfficeController extends Controller
         $this->office = new Office();
     }
     public function edit($office_id){
-        $office = $this->office->findOrFail($office_id);
+        $office = Office::findOrFail($office_id);
         return view("create", compact("office"));
     }
+    public function delete($office_id){
+        $office = Office::findOrFail($office_id);
+        $office->delete();
+        return redirect()->route('office.index');
+    }
+
+
     public function create(){
         return view('create');
     }
     public function index(){
-        $data = $this->office->getData();
+        $data = Office::all();
         return view('show',compact('data'));
     }
 
     public function store(OfficeRequest $request){
-    $registerOffice = $this->office->create([
+    $registerOffice = Office::create([
       'name' => $request->name,
       'address' => $request->address,
       'post_code' => $request->post_code,
@@ -43,7 +50,7 @@ class OfficeController extends Controller
 
     public function update(OfficeRequest $request, $office_id){
         $office = DB::transaction(function () use ($request, $office_id) {
-        $office = $this->office->findOrFail($office_id);
+        $office = Office::findOrFail($office_id);
         $office->update([
         'name' => $request->name,
         'address' => $request->address,

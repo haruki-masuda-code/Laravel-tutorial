@@ -5,10 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
-
+use App\Models\Traits\DeleteFlagTrait;
 class Office extends Model
 {
     use HasFactory;
+    use DeleteFlagTrait;
 
     protected $table = 'offices';
 
@@ -19,7 +20,8 @@ class Office extends Model
     'address',
     'post_code',
     'stair',
-    'comment'
+    'comment',
+    'del_flg',
     ];
 
     public function getData(){

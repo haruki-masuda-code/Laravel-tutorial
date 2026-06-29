@@ -68,6 +68,7 @@
       <button type="submit" class="btn btn-success">
         {{ isset($office) ? '更新' : '登録'}}
       </button>
+      <a href="{{ route('office.index') }}" class="btn btn-secondary">一覧へ戻る</a>
     </form>
   </div>
 
@@ -88,7 +89,7 @@
         }).done(function(res){
             console.log(res);
             alert('登録しました');
-            redirect()->route('office.index');
+            window.location.href = "{{ route('office.index') }}";
         }).fail(function(){
             alert('エラーが発生しました');
         })

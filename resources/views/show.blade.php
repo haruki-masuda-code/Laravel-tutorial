@@ -33,6 +33,11 @@
           <td>{{ $office->comment }}</td>
           <td>
             <a href="{{ route('office.edit', $office->id) }}" class="btn btn-sm">更新</a>
+            <form action="{{ route('office.delete', $office->id) }}" method="POST" style="display:inline;">
+                @csrf
+                @method('DELETE')
+            <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('本当に削除しますか？')">削除</button>
+            </form>
           </td>
         </tr>
         @endforeach
