@@ -22,7 +22,8 @@ class OfficeRequest extends FormRequest
      * @return array
      */
     public function rules()
-    {
+    {   
+        $officeId = $this->route('office_id');
         return [
             'name' => [
                 'required',
@@ -33,12 +34,12 @@ class OfficeRequest extends FormRequest
                 'required',
                 'string',
                 'max:255',
-                'unique:offices,address',
+                'unique:offices,address,' . $officeId . ',id',
             ],
             'post_code'=> [
                 'nullable',
                 'string',
-                
+                'size:7',
             ],
             'stair'=> [
                 'required',

@@ -12,7 +12,7 @@ class Office extends Model
 
     protected $table = 'offices';
 
-    protected $primaryKey = 'office_id';
+    protected $primaryKey = 'id';
 
     protected $fillable = [
     'name',
