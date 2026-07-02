@@ -20,6 +20,7 @@ class CreateOfficesTable extends Migration
             $table->char('post_code',7)->nullable()->comment('郵便番号');
             $table->integer('stair')->comment('募集階');
             $table->text('comment')->default('お問合せください')->comment('コメント');
+            $table->integer('del_flg')->default(0);
             $table->timestamps();
         });
     }
