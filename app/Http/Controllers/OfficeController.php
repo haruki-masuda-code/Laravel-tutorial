@@ -27,9 +27,13 @@ class OfficeController extends Controller
         return view('create');
     }
     public function index(){
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+        $userId = $_SESSION['user_id'] ?? null;
         $officeModel = new Office();
         $data = $officeModel->getData(); 
-        return view('show',compact('data'));
+        return view('show',compact('data','userId'));
     }
 
     public function store(OfficeRequest $request){

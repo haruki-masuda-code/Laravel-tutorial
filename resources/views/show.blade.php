@@ -6,6 +6,12 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 <body>
+    @if ($userId)
+      <p>ログイン中のユーザーID: {{ $userId }}</p>
+    @else
+      <p>ログインしていません</p>
+    @endif
+
   <div class="container mt-5">
     <h1 class="mb-4">登録オフィス一覧</h1>
     
